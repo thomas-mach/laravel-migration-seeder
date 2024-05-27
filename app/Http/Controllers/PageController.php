@@ -13,7 +13,7 @@ class PageController extends Controller
     {
         // $trains = Train::all();
         $currentDate = Carbon::now()->toDateString();
-        $trains = Train::whereDate('date', '>=', $currentDate)->orderBy('date', 'asc')->get();
+        $trains = Train::whereDate('data_di_partenza', '>=', $currentDate)->orderBy('data_di_partenza', 'asc')->get();
         return view('app', compact('trains'));
     }
 }
